@@ -910,14 +910,16 @@ footer {
     position: absolute;
     bottom: 5px;
     left: 50%;
-    width: 220px;
-    height: 15px;
+    width: 250px;
+    height: 25px;
     padding: 5px 0;
     color: rgb(37, 87, 8);
     font-size: 1em;
     cursor: pointer;
     text-align: center;
     user-select: none;
+    outline: none;
+    background-color: transparent;
     transition: font-size 0.2s ease-in-out;
     -webkit-transition: font-size 0.2s ease-in-out;
     -moz-transition: font-size 0.2s ease-in-out;
