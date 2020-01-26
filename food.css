@@ -977,6 +977,33 @@ footer {
   .show-recipe:hover {
     background-color: rgb(11, 255, 2);
   }
+
+  .scroll-top {
+    right: 0;
+    bottom: 20px;
+    opacity: 0.5;
+    transform: scaleY(0) rotate(0deg);
+    -webkit-transform: scaleY(0) rotate(0deg);
+    -moz-transform: scaleY(0) rotate(0deg);
+    -ms-transform: scaleY(0) rotate(0deg);
+    -o-transform: scaleY(0) rotate(0deg);
+  }
+
+  .scroll-top:hover {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+
+  .scroll-top-btn-active {
+    transform: scaleY(1) rotate(90deg);
+    -webkit-transform: scaleY(1) rotate(90deg);
+    -moz-transform: scaleY(1) rotate(90deg);
+    -ms-transform: scaleY(1) rotate(90deg);
+    -o-transform: scaleY(1) rotate(90deg);
+  }
 }
 
 @media (max-width: 600px) {
