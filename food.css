@@ -790,20 +790,20 @@ main {
   -o-transform: scaleY(0);
 }
 
-.scroll-top:hover {
-  transform: rotate(90deg) translateY(30px);
-  -webkit-transform: rotate(90deg) translateY(30px);
-  -moz-transform: rotate(90deg) translateY(30px);
-  -ms-transform: rotate(90deg) translateY(30px);
-  -o-transform: rotate(90deg) translateY(30px);
-}
-
 .scroll-top-btn-active {
   transform: scaleY(1);
   -webkit-transform: scaleY(1);
   -moz-transform: scaleY(1);
   -ms-transform: scaleY(1);
   -o-transform: scaleY(1);
+}
+
+.scroll-top-hover {
+  transform: rotate(90deg) translateY(30px);
+  -webkit-transform: rotate(90deg) translateY(30px);
+  -moz-transform: rotate(90deg) translateY(30px);
+  -ms-transform: rotate(90deg) translateY(30px);
+  -o-transform: rotate(90deg) translateY(30px);
 }
 
 .scroll-top i {
@@ -987,14 +987,6 @@ footer {
     -moz-transform: scaleY(0) rotate(0deg);
     -ms-transform: scaleY(0) rotate(0deg);
     -o-transform: scaleY(0) rotate(0deg);
-  }
-
-  .scroll-top:hover {
-    transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
   }
 
   .scroll-top-btn-active {
