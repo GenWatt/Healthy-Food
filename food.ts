@@ -1,4 +1,12 @@
+document.body.style.overflow = "hidden";
+
 window.onload = () => {
+  /*simulation preloader */
+  setTimeout(() => {
+    const preloader: Element = document.querySelector(".preloader");
+    preloader.classList.add("disappear");
+    document.body.style.overflow = "visible";
+  }, 300);
   const infoSections: NodeListOf<Element> = document.querySelectorAll(
     ".info-section"
   );
@@ -183,7 +191,6 @@ window.onload = () => {
       }
     });
   });
-
   const onloadAnimations = () => {
     /* option section onload animate*/
 
