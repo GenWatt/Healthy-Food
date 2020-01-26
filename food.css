@@ -15,6 +15,79 @@ body {
   -o-transition: background-color 0.3s ease-in;
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(45deg, green, yellowgreen);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.disappear {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.dot {
+  background-color: whitesmoke;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-left: 20px;
+  box-shadow: 0 0 3px 5px black;
+}
+
+.dot:nth-child(1) {
+  animation: move-top-dots 1.2s ease-in infinite;
+  -webkit-animation: move-top-dots 1.2s ease-in infinite;
+}
+
+.dot:nth-child(2) {
+  animation: move-top-dots 0.8s ease-in infinite 0.4s;
+  -webkit-animation: move-top-dots 0.8s ease-in infinite 0.4s;
+}
+
+.dot:nth-child(3) {
+  animation: move-top-dots 0.6s ease-in infinite 0.6s;
+  -webkit-animation: move-top-dots 0.6s ease-in infinite 0.6s;
+}
+
+@keyframes move-top-dots {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -30px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 ::-webkit-scrollbar {
   background-color: rgb(61, 56, 56);
 }
@@ -163,18 +236,23 @@ body header nav ul {
   position: absolute;
   top: 0;
   left: 0;
-  transform: scaleY(0) translateX(0);
-  transition: left 0.3s ease-in;
-  -webkit-transition: left 0.3s ease-in;
-  -moz-transition: left 0.3s ease-in;
-  -ms-transition: left 0.3s ease-in;
-  -o-transition: left 0.3s ease-in;
-  -webkit-transform: scaleY(0) translateX(0);
-  -moz-transform: scaleY(0) translateX(0);
-  -ms-transform: scaleY(0) translateX(0);
-  -o-transform: scaleY(0) translateX(0);
+  transform: scaleY(0);
+  transition: all 0.3s ease-in;
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -o-transform: scaleY(0);
   animation: light-mode-scale-y 0.4s ease-in-out forwards 0.3s;
   -webkit-animation: light-mode-scale-y 0.4s ease-in-out forwards 0.3s;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+
+.dark-mode-toggle:hover .light-mode {
+  box-shadow: 2px 0px 3px 3px rgb(223, 221, 213),
+    10px 0px 2px 2px rgb(212, 204, 175);
 }
 
 @keyframes light-mode-scale-y {
@@ -195,29 +273,6 @@ body header nav ul {
   }
 }
 
-.dark-mode-toggle:hover .light-mode {
-  animation: light-mode-hover-move 0.8s ease-in infinite;
-  -webkit-animation: light-mode-hover-move 0.8s ease-in infinite;
-}
-
-@keyframes light-mode-hover-move {
-  0% {
-    transform: translateX(3px);
-    -webkit-transform: translateX(3px);
-    -moz-transform: translateX(3px);
-    -ms-transform: translateX(3px);
-    -o-transform: translateX(3px);
-  }
-
-  100% {
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-  }
-}
-
 .light-mode-off {
   left: -200px;
 }
@@ -235,39 +290,15 @@ body header nav ul {
   position: absolute;
   top: 0;
   right: -200px;
-  transform: translateX(3px);
-  -webkit-transform: translateX(3px);
-  -moz-transform: translateX(3px);
-  -ms-transform: translateX(3px);
-  -o-transform: translateX(3px);
-  transition: right 0.3s ease-in;
-  -webkit-transition: right 0.3s ease-in;
-  -moz-transition: right 0.3s ease-in;
-  -ms-transition: right 0.3s ease-in;
-  -o-transition: right 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
 }
 
 .dark-mode-toggle:hover .dark-mode {
-  animation: dark-mode-hover-move 0.8s ease-in infinite;
-  -webkit-animation: dark-mode-hover-move 0.8s ease-in infinite;
-}
-
-@keyframes dark-mode-hover-move {
-  0% {
-    transform: translateX(3px);
-    -webkit-transform: translateX(3px);
-    -moz-transform: translateX(3px);
-    -ms-transform: translateX(3px);
-    -o-transform: translateX(3px);
-  }
-
-  100% {
-    transform: translateX(5px);
-    -webkit-transform: translateX(5px);
-    -moz-transform: translateX(5px);
-    -ms-transform: translateX(5px);
-    -o-transform: translateX(5px);
-  }
+  box-shadow: -2px 0px 3px 3px rgb(0, 0, 0), -10px 0px 2px 2px rgb(80, 79, 77);
 }
 
 .dark-mode-on {
@@ -564,7 +595,7 @@ main {
   left: 0;
   background-color: rgb(11, 189, 5);
   width: 100%;
-  height: 100%;
+  height: 105%;
   opacity: 0.8;
 }
 
@@ -577,11 +608,11 @@ main {
 }
 
 .more-info {
-  transform: translateY(-400px);
-  -webkit-transform: translateY(-400px);
-  -moz-transform: translateY(-400px);
-  -ms-transform: translateY(-400px);
-  -o-transform: translateY(-400px);
+  transform: translateY(-500px);
+  -webkit-transform: translateY(-500px);
+  -moz-transform: translateY(-500px);
+  -ms-transform: translateY(-500px);
+  -o-transform: translateY(-500px);
   opacity: 0;
   transition: all 0.2s ease-in-out 0.2s;
   -moz-transition: all 0.2s ease-in-out 0.2s;
@@ -605,11 +636,11 @@ main {
 
 .info-section:hover .info-set .more-info {
   opacity: 1;
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
 }
 
 .wrapper {
@@ -884,6 +915,11 @@ footer {
 }
 
 @media (max-width: 660px) {
+  .dot {
+    width: 40px;
+    height: 40px;
+  }
+
   body header h1 {
     font-size: 2.5em;
   }
