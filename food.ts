@@ -36,7 +36,16 @@ window.onload = () => {
   scrollBtnShow();
   window.addEventListener("scroll", scrollBtnShow);
 
+  scrollTopBtn.addEventListener("mouseover", () => {
+    scrollTopBtn.classList.add("scroll-top-hover");
+  });
+
+  scrollTopBtn.addEventListener("mouseleave", () => {
+    scrollTopBtn.classList.remove("scroll-top-hover");
+  });
+
   scrollTopBtn.addEventListener("click", () => {
+    scrollTopBtn.classList.remove("scroll-top-hover");
     scrollTo({
       top: 0,
       left: 0,
