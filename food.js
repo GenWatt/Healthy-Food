@@ -29,7 +29,14 @@ window.onload = function () {
     };
     scrollBtnShow();
     window.addEventListener("scroll", scrollBtnShow);
+    scrollTopBtn.addEventListener("mouseover", function () {
+        scrollTopBtn.classList.add("scroll-top-hover");
+    });
+    scrollTopBtn.addEventListener("mouseleave", function () {
+        scrollTopBtn.classList.remove("scroll-top-hover");
+    });
     scrollTopBtn.addEventListener("click", function () {
+        scrollTopBtn.classList.remove("scroll-top-hover");
         scrollTo({
             top: 0,
             left: 0,
