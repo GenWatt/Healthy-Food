@@ -1,4 +1,11 @@
+document.body.style.overflow = "hidden";
 window.onload = function () {
+    /*simulation preloader */
+    setTimeout(function () {
+        var preloader = document.querySelector(".preloader");
+        preloader.classList.add("disappear");
+        document.body.style.overflow = "visible";
+    }, 300);
     var infoSections = document.querySelectorAll(".info-section");
     var descriptions = document.querySelectorAll(".description");
     var isLocked = false;
